@@ -3,7 +3,7 @@
     
     "name":                 "NoFap Panic Button",
     "description":          "This extension embeds a panic button, incase of emergencies",
-    "version":              "0.1",
+    "version":              "1.0",
     
     "icons":{
         "19":               "images/icon19.png",

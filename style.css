@@ -2,10 +2,6 @@ body,html
 {
     text-align:center;height:100%;-webkit-user-select:none
 }
-#content
-{
-
-}
 .pbutton
 {
     height:50%;padding:10px;color:#fff;border:0
@@ -41,68 +37,3 @@ body,html
 {
     background:#9b59b6
 }
-/*
-.footer-button
-{
-    height:15%;padding:0;color:#fff;border:0;z-index:2
-}
-#nofap
-{
-    background:#C5EFF7
-}
-#nofap:hover
-{
-    background:#ecf5fe
-}
-#suggest
-{
-    background:#2f4255
-}
-#suggest:hover
-{
-    background:#34495e
-}
-#ios
-{
-    background:#9fadae
-}
-#ios:hover
-{
-    background:#ecf0f1
-}
-#android
-{
-    background:#7f8c8d
-}
-#android:hover
-{
-    background:#bdc3c7
-}
-.cross
-{
-    height:50%;margin-right:5%;margin-bottom:2%
-}
-.nficon
-{
-    height:50%
-}
-#footer
-{
-    text-wrap:unrestricted;padding-bottom:5px;font-size:1.05em;vertical-align:middle;color: #999999;z-index:4
-}
-#religious
-{
-    position:fixed;right:20px;top:20px;z-index:3
-}
-#mobilereligious
-{
-    display:none;
-}
-@media only screen and (max-width:768px)
-{
-    .pbutton{width:100%}
-    #emergency{height:40%}#rejection,#relapsed{height:15%}#depression{height:30%}
-    .cross{margin-right:4%}
-    #hint,#religious,#ios,#android,#footer{display:none}
-    #mobilereligious{position:fixed;top:8px;right:8px;display:inline;z-index:3}
-}*/

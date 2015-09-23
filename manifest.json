@@ -3,7 +3,7 @@
     
     "name":                 "NoFap Panic Button",
     "description":          "This extension provides an inbrowser version of the NoFap Emergency Relpase Prevention Tool.",
-    "version":              "0.1.0",
+    "version":              "0.1.1",
     
     "icons":{
         "16":               "images/icon16.png",

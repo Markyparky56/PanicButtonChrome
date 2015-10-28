@@ -2,7 +2,7 @@
     "manifest_version":     2,
     
     "name":                 "NoFap Panic Button",
-    "description":          "This extension provides an inbrowser version of the NoFap Emergency Relpase Prevention Tool.",
+    "description":          "This extension provides an in browser version of the NoFap Emergency Relapse Prevention Tool.",
     "version":              "1.0.0",
     
     "icons":{

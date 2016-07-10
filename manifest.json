@@ -1,10 +1,10 @@
 {
     "manifest_version":     2,
-    
+
     "name":                 "NoFap Panic Button",
     "description":          "This extension provides an in browser version of the NoFap Emergency Relapse Prevention Tool.",
-    "version":              "1.0.1",
-    
+    "version":              "1.0.2",
+
     "icons":{
         "16":               "images/icon16.png",
         "19":               "images/icon19.png",
@@ -13,20 +13,20 @@
         "64":               "images/icon64.png",
         "128":              "images/icon128.png"
     },
-    
+
     "browser_action":{
         "default_popup":    "popup.html"
     },
-    
+
     "options_ui":{
         "page": "options.html",
         "chrome_style": true
     },
-    
+
     "permissions":[
         "activeTab",
         "storage"
     ],
-    
+
     "content_security_policy":  "script-src 'self' https://www.google-analytics.com/analytics.js; object-src 'self'"
 }

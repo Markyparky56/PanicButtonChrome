@@ -36,11 +36,19 @@ panicbutton.processUrl = function()
         // We can cut off the end of this url
         panicbutton.url = match[1];
     }
+    else if((panicbutton.url.match(/\//g) || []).length > 5)
+    {
+        // Likely means there is other stuff at the end of the url,
+        // very edge casey but this should trim it back down to a usable url
+        var regex = /(([^=]*)\/([^=]*))\//;
+        var match = regex.exec(panicbutton.url);
+        panicbutton.url = match[2];
+    }
 
     // Check if we need to add a '/' to the end
-    if(panicbutton.url.substring(panicbutton.url.length-1) != "/")
+    if(panicbutton.url.slice(-1) != "/")
     {
-        panicbutton.url = panicbutton.url + "/"; // +=?
+        panicbutton.url +=  "/";
     }
 
     // Append the about.json we want to check
@@ -62,10 +70,6 @@ panicbutton.checkForNSFW = function()
             {
                 window.location.replace(panicbutton.safehavenUrl);
             }
-            // else
-            // {
-            //     console.log("NSFWGuard finds this subreddit safe!");
-            // }
         }
         else if(typeof json[0].data.children[0] != "undefined") // Might be a comments page
         {
@@ -73,16 +77,11 @@ panicbutton.checkForNSFW = function()
             {
                 window.location.replace(panicbutton.safehavenUrl);
             }
-            // else
-            // {
-            //     console.log("NSFWGuard finds this subreddit safe!");
-            // }
         }
         else
         {
             console.log("Confused!");
         }
-
     }
     panicbutton.xhr.send();
 }

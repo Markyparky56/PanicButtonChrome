@@ -2,14 +2,17 @@
 function save_options()
 {
     var religious = document.getElementById("religious").checked;
-    console.log("religious = " + religious);
+    var nsfwguard = document.getElementById("nsfwguard").checked;
+    var safehaven = document.getElementById("nsfwguard-safehaven").value;
     chrome.storage.sync.set({
-        religiousEnabled: religious 
+        religiousEnabled: religious,
+        nsfwguardEnabled: nsfwguard,
+        safehavenUrl: safehaven
     }, function() {
         // Update status
         var status = document.getElementById("status");
         status.textContent = "Options saved.";
-        console.log("Saved!");
+        // console.log("Saved!");
         setTimeout(function() {
             status.textContent = "";
         }, 750);
@@ -19,13 +22,26 @@ function save_options()
 // Restores checkbox state using preferences
 function restore_options()
 {
-    // Default to off
+    // Default religious off, nsfwguard to on and safehaven to /r/nofap
     chrome.storage.sync.get({
-        religiousEnabled: false
+        religiousEnabled: false,
+        nsfwguardEnabled: true,
+        safehavenUrl: "https://www.reddit.com/r/nofap/"
     }, function(items) {
         document.getElementById("religious").checked = items.religiousEnabled;
+        document.getElementById("nsfwguard").checked = items.nsfwguardEnabled;
+        document.getElementById("nsfwguard-safehaven").value = items.safehavenUrl;
+        if(!items.nsfwguardEnabled) { document.getElementById("nsfwguard-safehaven").disabled=true; }
     });
 }
 
 document.addEventListener("DOMContentLoaded", restore_options);
 document.getElementById("save").addEventListener("click", save_options);
+document.addEventListener("DOMContentLoaded", function(event) {
+    var selector = document.querySelector("input[name=nsfwguard]");
+    var safehavenInput = document.querySelector("input[name=nsfwguard-safehaven]");
+    selector.addEventListener("change", function(event) {
+        if(selector.checked) { safehavenInput.disabled=false; }
+        else { safehavenInput.disabled=true; }
+    });
+});

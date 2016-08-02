@@ -59,11 +59,8 @@ panicbutton.checkForNSFW = function()
 {
     panicbutton.processUrl();
 
-    panicbutton.xhr = new XMLHttpRequest();
-    panicbutton.xhr.open("GET", panicbutton.jsonUrl, false); // No Async so the page won't load until we know it's safe
-    panicbutton.xhr.onload = function()
+    $.get(panicbutton.jsonUrl, function(json)
     {
-        var json = JSON.parse(this.responseText);
         if(typeof json.data != "undefined")
         {
             if(json.data.over18)
@@ -82,6 +79,9 @@ panicbutton.checkForNSFW = function()
         {
             console.log("Confused!");
         }
-    }
-    panicbutton.xhr.send();
+        $.holdReady(false);
+    });
+
+    $.holdReady(true);
+    //panicbutton.xhr.send();
 }

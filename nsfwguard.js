@@ -60,9 +60,5 @@ panicbutton.checkForNSFW = function()
         {
             console.log("Confused!");
         }
-        $.holdReady(false);
     });
-
-    $.holdReady(true);
-    //panicbutton.xhr.send();
 }

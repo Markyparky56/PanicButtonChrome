@@ -12,7 +12,6 @@ function save_options()
         // Update status
         var status = document.getElementById("status");
         status.textContent = "Options saved.";
-        // console.log("Saved!");
         setTimeout(function() {
             status.textContent = "";
         }, 750);

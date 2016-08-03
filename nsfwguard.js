@@ -23,7 +23,7 @@ chrome.storage.sync.get({
 panicbutton.processUrl = function()
 {
     panicbutton.url = window.location.href;
-    var regex = /(^https?:\/\/[^\.]+\.reddit.com\/r\/[^*]+\/?)/
+    var regex = /(^https?:\/\/[^\.]+\.reddit.com\/r\/[^\/]+\/?)/
     panicbutton.url = regex.exec(panicbutton.url)[0];
 
     // Check if we need to add a '/' to the end

@@ -22,28 +22,9 @@ chrome.storage.sync.get({
 
 panicbutton.processUrl = function()
 {
-    panicbutton.url = document.URL;
-    var regex = /([^=]*)\/([^=]*)/; // Capture everything before and after the last '/' and check if it is a recognised sub-page
-    var match = regex.exec(panicbutton.url);
-    if(match[2] == "hot"
-    || match[2] == "new"
-    || match[2] == "rising"
-    || match[2] == "controversial"
-    || match[2] == "top"
-    || match[2] == "gilded"
-    || match[2] == "promoted")
-    {
-        // We can cut off the end of this url
-        panicbutton.url = match[1];
-    }
-    else if((panicbutton.url.match(/\//g) || []).length > 5)
-    {
-        // Likely means there is other stuff at the end of the url,
-        // very edge casey but this should trim it back down to a usable url
-        var regex = /(([^=]*)\/([^=]*))\//;
-        var match = regex.exec(panicbutton.url);
-        panicbutton.url = match[2];
-    }
+    panicbutton.url = window.location.href;
+    var regex = /(^https?:\/\/[^\.]+\.reddit.com\/r\/[^*]+\/?)/
+    panicbutton.url = regex.exec(panicbutton.url)[0];
 
     // Check if we need to add a '/' to the end
     if(panicbutton.url.slice(-1) != "/")

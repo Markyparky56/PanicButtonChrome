@@ -26,7 +26,8 @@
     "permissions":[
         "activeTab",
         "storage",
-        "https://*.reddit.com/r/*"
+        "https://*.reddit.com/r/*",
+        "*://*/*"        
     ],
 
     "content_scripts": [
@@ -34,8 +35,13 @@
             "matches": ["https://*.reddit.com/r/*"],
             "js": ["jquery-2.1.4.min.js", "nsfwguard.js"],
             "run_at" : "document_start"
+        },
+        {
+          "matches": ["*://*/*"],
+          "js": ["popupbox.js"],
+          "run_at" : "document_end"
         }
     ],
 
-    "content_security_policy":  "script-src 'self' https://www.google-analytics.com/analytics.js; object-src 'self'"
+    "content_security_policy":  "script-src 'self' https://www.google-analytics.com/analytics.js; object-src 'self';"
 }

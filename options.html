@@ -6,15 +6,41 @@
 </head>
 
 <body>
+    <i>Remember to hit save at the bottom if you make any changes!</i>
     <h3 id="NSFWGuardH3"><u>NSFWGuard</u></h3>
     <input type="checkbox" name="nsfwguard" id="nsfwguard" checked> Enable NSFWGuard </br>
-    Redirect To: <input type="text" name="nsfwguard-safehaven" id="nsfwguard-safehaven" value="https://www.reddit.com/r/nofap/">
+    Redirect To: <input type="text" name="nsfwguard-safehaven" id="nsfwguard-safehaven" value="https://www.reddit.com/r/nofap/" style="width:225px">
     </br>
     <div id="nsfwguard-desc">
     Enabling NSFWGuard will allow the extension to detect whether a subreddit is
     flagged as NSFW (for over 18s only) and will redirect you to a page of your
     choice if it is.
     </div>
+    <hr>
+    <h3 id="PopupPanicButtonH3"><u>Popup Panic Button</u></h3>
+    <input type="checkbox" id="popup"> Enable Popup Panic Button<br>
+
+    Popup Side:
+    <input id="popupSideLeft" type="radio" name="popupSide" value="left" checked> Left 
+    <input id="popupSideRight" type="radio" name="popupSide" value="right"> Right<br>
+
+    <span style="margin-top:5px;">Enabling the Popup Panic Button will allow the extension to insert a popup 
+    version of the panic button into the corner of any webpage you visit, providing
+    you with immediate access to the motivational material you need!</span>
+    <br>
+    You may "blacklist" specific sites where the popup box won't appear. Add any site addresses
+    you wish to hide the popup box on to the text box below, separated by semi-colons. 
+    The blacklist supports the use of wild-cards, simply place an asterisk (*) as a placeholder 
+    for part of the address and the plugin will not use the popup panic button on any cases that 
+    match that address.
+    <br>
+    Valid ways to blacklist sites and specific pages include:<br>
+    <li>www.example.com</li>
+    <li>example.com</li>
+    <li>http://www.example.com/specific/page</li>
+    <li>*.example.com</li>
+    <b><u>Popup Panic Button Site Blacklist</u></b>
+    <textarea id="popupBlacklist" cols="60" rows="3" wrap="hard" style="resize:none;margin-top:5px;"></textarea>
     <hr>
     <input type="checkbox" id="religious"> Enable Religous Content<br></br>
     <button id="save">Save</button>

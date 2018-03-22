@@ -1,6 +1,7 @@
 body,html
 {
-    text-align:center;height:100%;-webkit-user-select:none
+    text-align:center;height:100%;-webkit-user-select:none;
+    width: 225px;
 }
 .pbutton
 {
@@ -36,4 +37,50 @@ body,html
 #relapsed:hover
 {
     background:#9b59b6
+}
+
+#religiousEnabledCheckbox {
+  -webkit-appearance: checkbox!important;
+  height: initial!important;
+  width: initial!important;
+  margin: 5px 3px 3px 4px!important;
+}
+input#religiousEnabledCheckbox:focus {
+  box-shadow: initial!important;
+}
+input#religiousEnabledCheckbox:before {
+  content: none!important;
+}
+.religiousSetting:hover {
+  background: #8B8986!important;
+}
+.religiousSetting {
+  position: absolute!important;
+  top: 1.5%!important;
+  left: 2%!important;
+  background: #73716e!important;
+  border-radius: 3px!important;
+  display: flex!important;
+  align-items: center!important;
+  justify-content: center!important;
+  padding-right: 4px!important;
+  width: 78.484px!important;
+}
+.religiousSetting:hover {
+  background: #8B8986!important;
+}
+.religiousSetting,
+.religiousSetting:hover {
+  z-index: 99999!important;
+}
+.religiousSettingText {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif!important;
+}
+.religiousSettingText {
+  font-size: 13px!important;
+  color: #fff!important;
+  text-align: center!important;
+  position: relative!important;
+  display: table-cell!important;
+  vertical-align: middle!important;
 }

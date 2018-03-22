@@ -1,0 +1,158 @@
+/*
+  This file is just used for prototyping changes to the popup box, it is minified
+  into a single line before being used. Changes made here won't affect the version
+  in the extension proper.
+*/
+
+div.pboverride {
+  width: 250px;
+  margin: 0px;
+  padding: 0px;
+  background-color: initial;
+  border-radius: 0;
+  position: initial;
+}
+span#emText {
+    color: #fff!important;
+}
+#religiousEnabledCheckbox {
+    -webkit-appearance: checkbox!important;
+    height: initial!important;
+    width: initial!important;
+    margin: 5px 3px 3px 4px!important;
+}
+input#religiousEnabledCheckbox:focus {
+  box-shadow: initial!important;
+}
+input#religiousEnabledCheckbox:before {
+  content: none!important;
+}
+.religiousSetting {
+    position: absolute!important;
+    top: 11%!important;
+    left: 2%!important;
+    background: #73716e!important;
+    border-radius: 3px!important;
+    display: flex!important;
+    align-items: center!important;
+    justify-content: center!important;
+    padding-right: 4px!important;
+    width: 78.484px!important;
+}
+.religiousSetting:hover {
+  background: #8B8986!important;
+}
+.religiousSetting,
+.religiousSetting:hover {
+  z-index: 99999!important;
+}
+.panicbuttonpopupbox {
+  top: calc(100% - 29px)!important;
+  user-select: none!important;
+  border-top-left-radius: 10%!important;
+  border-top-right-radius: 10%!important;
+  background: #c8c8c8!important;
+}
+.panicbuttonpopupbox:hover {
+  top: calc(100% - 278px)!important;
+  display: block!important;
+}
+.panicbuttonpopupbox,
+.panicbuttonpopupbox:hover {
+    width: 250px!important;
+    position: fixed!important;
+    transition: top 0.5s ease-in-out!important;
+    border-style: outset!important;
+    border-width: 3px 3px 0px 3px;
+    padding: 0!important;
+    box-sizing: content-box;
+}
+.panicbuttonpopupboxtop {
+  color: #000!important;
+  font: 400 13.33px Arial!important;
+  width: 100%!important;
+  text-align: center!important;
+  padding: 5px 0 6px!important;
+  display: flex!important;
+  flex-direction: column!important;
+  align-content: stretch!important;
+  align-items: stretch!important;
+}
+.emergencybutton {
+  order: 0!important;
+  background: #e74c3c!important;
+  font-size: 36px!important;
+  height: 126px!important;
+  display: flex!important;
+  flex-direction: column!important;
+  align-items: center!important;
+  justify-content: center!important;
+  line-height: normal!important;
+}
+.panicbuttonicon {
+  position: absolute!important;
+  right: 59.219px!important;
+  top: 5px!important;
+  padding: 0 4px 8px 8px!important;
+}.rejectionbutton:hover {
+  background: #2ecc71!important;  
+}
+.pbIcon {
+  margin: 0px!important;
+}
+.panicbuttonarrows {
+  position: absolute!important;
+  top: 5px!important;
+  left: 215px!important;
+}
+.relapsedbutton:hover {
+  background: #9b59b6!important;
+}
+.relapsedbutton {
+  order: 3!important;
+  background: #8e44ad!important;
+}
+.rejectionbutton {
+  order: 2!important;
+  background: #27ae60!important;
+}
+.depressionbutton:hover {
+  background: #3498db!important;
+}
+.depressionbutton {
+  order: 1!important;
+  background: #2980b9!important;
+  font-size: 24px!important;
+  height: 48px!important;
+}
+.emergencybutton:hover {
+  background: red!important;
+}
+.panicbutton {
+  width: 250px!important;
+  padding: 0!important;
+  color: #fff!important;
+  border: 0!important;
+  border-radius: 0!important;
+  font-size: 16px;
+  height: 38px;
+  position: inherit!important;
+  font-weight: 400!important;
+  margin: 0!important;
+  letter-spacing: normal!important;
+  text-transform: none!important;
+  min-height: 0px!important;
+  opacity: 1.0!important;  
+}
+.panicbutton,
+.religiousSettingText {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif!important;
+}
+.religiousSettingText {
+  font-size: 13px!important;
+  color: #fff!important;
+  text-align: center!important;
+  position: relative!important;
+  display: table-cell!important;
+  vertical-align: middle!important;
+}

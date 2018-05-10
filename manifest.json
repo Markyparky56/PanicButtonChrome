@@ -24,18 +24,18 @@
     },
 
     "permissions":[
+        "webRequest", "webRequestBlocking",
         "activeTab",
         "storage",
         "*://*.reddit.com/r/*",
         "*://*/*"        
     ],
 
-    "content_scripts": [
-        {
-            "matches": ["*://*.reddit.com/*"],
-            "js": ["nsfwguard.js"],
-            "run_at" : "document_start"
-        },
+    "background": {
+      "scripts": ["nsfwguard_webrequestlistener.js"]
+    },
+
+    "content_scripts": [        
         {
           "matches": ["*://*/*"],
           "js": ["popupbox.js"],

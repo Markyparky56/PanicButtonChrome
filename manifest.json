@@ -35,6 +35,11 @@
       "scripts": ["nsfwguard_webrequestlistener.js"]
     },
 
+    "web_accessible_resources": [
+      "popupbox.css",
+      "popupbox.html"
+    ],
+
     "content_scripts": [        
         {
           "matches": ["*://*/*"],

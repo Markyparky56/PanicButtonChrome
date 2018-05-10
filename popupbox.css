@@ -3,6 +3,9 @@
   into a single line before being used. Changes made here won't affect the version
   in the extension proper.
 */
+body {
+  margin: 0;
+}
 .pbpb {
   z-index: 99999!important;
 }
@@ -25,6 +28,7 @@ span#emText {
 }
 #religiousEnabledCheckbox {
     -webkit-appearance: checkbox!important;
+    appearance: checkbox!important;
     height: initial!important;
     width: initial!important;
     margin: 5px 3px 3px 4px!important;

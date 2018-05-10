@@ -94,27 +94,47 @@ panicbutton.popupboxInit = function(religiousEnabled)
         document.documentElement.appendChild(footer);
     }
 
-    footer.insertAdjacentHTML('beforeend', panicbutton.GetPopupPanicButtonString());
-    document.getElementById("religiousSetting").addEventListener("click", (e) => {
-      if(e.target.id == "religiousEnabledCheckbox") return; // It can handle itself
-      let checkbox = document.getElementById("religiousEnabledCheckbox"); checkbox.checked = !checkbox.checked; panicbutton.SetReligiousSetting();
-    });
-    document.getElementById("religiousEnabledCheckbox").addEventListener("change", () => {panicbutton.SetReligiousSetting();});
-    document.getElementById("pbembtn").addEventListener("click", () => {panicbutton.GetNewUrlAndUpdateTab("em");});
-    document.getElementById("pbdepbtn").addEventListener("click", () => {panicbutton.GetNewUrlAndUpdateTab("dep");});
-    document.getElementById("pbrejbtn").addEventListener("click", () => {panicbutton.GetNewUrlAndUpdateTab("rej");});
-    document.getElementById("pbrelbtn").addEventListener("click", () => {panicbutton.GetNewUrlAndUpdateTab("rel");});
-    document.getElementById("pbsideswitch").addEventListener("click", () => {
-      document.getElementById("pbsideswitch").classList.remove((panicbutton.panicbuttonSideLeft ? "pointRight" : "pointLeft"));
-      document.getElementById("pbsideswitch").classList.add((panicbutton.panicbuttonSideLeft ? "pointLeft" : "pointRight"));
-      document.getElementById("popuppanicbutton").classList.remove((panicbutton.panicbuttonSideLeft ? "pbpbLeft" : "pbpbRight"));
-      document.getElementById("popuppanicbutton").classList.add((panicbutton.panicbuttonSideLeft ? "pbpbRight" : "pbpbLeft"));
-      panicbutton.panicbuttonSideLeft = !panicbutton.panicbuttonSideLeft;
-      panicbutton.SetPBSideSetting();
-    });
+    //footer.insertAdjacentHTML('beforeend', panicbutton.GetPopupPanicButtonString());
+    
+    // Create a link element to our popupbox stylesheet
+    let popupboxStyle = document.createElement("link");
+    popupboxStyle.rel = "stylesheet";
+    popupboxStyle.type = "text/css";
+    popupboxStyle.href = chrome.runtime.getURL("popupbox.css");
+    footer.appendChild(popupboxStyle);
 
-    panicbutton.religiousEnabled = religiousEnabled;
-    document.getElementById("religiousEnabledCheckbox").checked = religiousEnabled;
+    // Create the iframe element our popup box will reside within
+    let popupboxFrame = document.createElement("iframe");
+    popupboxFrame.src = chrome.runtime.getURL("popupbox.html");
+    popupboxFrame.classList.add("pboverride", "pbpb", "panicbuttonpopupbox");
+    popupboxFrame.scrolling="no";
+    popupboxFrame.id = "pbFrame";
+    popupboxFrame.height = "276px"
+    footer.appendChild(popupboxFrame);
+
+    // let frameDoc = popupboxFrame.contentWindow.document;
+
+    // console.log(frameDoc);
+    // frameDoc.getElementById("religiousSetting").addEventListener("click", (e) => {
+    //   if(e.target.id == "religiousEnabledCheckbox") return; // It can handle itself
+    //   let checkbox = frameDoc.getElementById("religiousEnabledCheckbox"); checkbox.checked = !checkbox.checked; panicbutton.SetReligiousSetting();
+    // });
+    // frameDoc.getElementById("religiousEnabledCheckbox").addEventListener("change", () => {panicbutton.SetReligiousSetting();});
+    // frameDoc.getElementById("pbembtn").addEventListener("click", () => {panicbutton.GetNewUrlAndUpdateTab("em");});
+    // frameDoc.getElementById("pbdepbtn").addEventListener("click", () => {panicbutton.GetNewUrlAndUpdateTab("dep");});
+    // frameDoc.getElementById("pbrejbtn").addEventListener("click", () => {panicbutton.GetNewUrlAndUpdateTab("rej");});
+    // frameDoc.getElementById("pbrelbtn").addEventListener("click", () => {panicbutton.GetNewUrlAndUpdateTab("rel");});
+    // frameDoc.getElementById("pbsideswitch").addEventListener("click", () => {
+    //   frameDoc.getElementById("pbsideswitch").classList.remove((panicbutton.panicbuttonSideLeft ? "pointRight" : "pointLeft"));
+    //   frameDoc.getElementById("pbsideswitch").classList.add((panicbutton.panicbuttonSideLeft ? "pointLeft" : "pointRight"));
+    //   frameDoc.getElementById("popuppanicbutton").classList.remove((panicbutton.panicbuttonSideLeft ? "pbpbLeft" : "pbpbRight"));
+    //   frameDoc.getElementById("popuppanicbutton").classList.add((panicbutton.panicbuttonSideLeft ? "pbpbRight" : "pbpbLeft"));
+    //   panicbutton.panicbuttonSideLeft = !panicbutton.panicbuttonSideLeft;
+    //   panicbutton.SetPBSideSetting();
+    // });
+
+    // panicbutton.religiousEnabled = religiousEnabled;
+    // frameDoc.getElementById("religiousEnabledCheckbox").checked = religiousEnabled;
   }
 }
 

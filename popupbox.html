@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="popupbox.css"> 
+  </head>
+  <body>
+    <div class="pboverride panicbuttonpopupboxtop">
+      <div class="hastooltip">
+        <img id="pbsideswitch" class="panicbuttonarrows sideswitch">
+        <span class="tooltiptext">Click To Swap Sides</span>
+      </div>
+      <span id="topboxtext">Panic Button</span>
+      <img class="panicbuttonicon">
+    </div>
+    <div class="pboverride panicbuttonhiddenpopupbox">
+      <div id="religiousSetting" class="pboverride religiousSetting">
+        <input id="religiousEnabledCheckbox" class="pboverride" type="checkbox">
+        <div class="pboverride religiousSettingText">Religious</div>
+      </div>
+      <button type="submit" value="Emergency" id="pbembtn" class="pboverride panicbutton emergencybutton"><img class="pbIcon" id="emIcon"><span id="emText">Emergency</span></button>
+      <button type="submit" value="Depression" id="pbdepbtn" class="pboverride panicbutton depressionbutton"><span id="emText">Depression</span></span></button>
+      <button type="submit" value="Rejection" id="pbrejbtn" class="pboverride panicbutton rejectionbutton"><span id="emText">Rejection</span></button>
+      <button type="submit" value="Relapsed" id="pbrelbtn" class="pboverride panicbutton relapsedbutton"><span id="emText">Relapsed</span></button>
+    </div>
+    <script src="popupboxinner.js"></script>          
+  </body>
+</html>

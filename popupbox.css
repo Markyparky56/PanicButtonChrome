@@ -99,6 +99,7 @@ input#religiousEnabledCheckbox:before {
 }
 .pbIcon {
   margin: 0px!important;
+  background: transparent!important;
 }
 .panicbuttonarrows {
   position: absolute!important;

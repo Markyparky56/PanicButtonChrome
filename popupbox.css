@@ -3,7 +3,15 @@
   into a single line before being used. Changes made here won't affect the version
   in the extension proper.
 */
-
+.pbpb {
+  z-index: 99999!important;
+}
+.pbpbLeft{
+  left: 0!important;  
+}
+.pbpbRight{
+  right: 0!important;
+}
 div.pboverride {
   width: 250px;
   margin: 0px;
@@ -71,6 +79,7 @@ input#religiousEnabledCheckbox:before {
   color: #000!important;
   font: 400 13.33px Arial!important;
   width: 100%!important;
+  height: 15px!important;
   text-align: center!important;
   padding: 5px 0 6px!important;
   display: flex!important;
@@ -90,21 +99,40 @@ input#religiousEnabledCheckbox:before {
   line-height: normal!important;
 }
 .panicbuttonicon {
+  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABSUlEQVQ4T52TPW7CQBCFv70EBVKUQ8QgIWiTKCdAQuKngyYlFFAABRRQpoHOBgmJE0RJWkQBziGiiCJwiEXL2o7jXUdKtrHnzby387eCxJFS3gCPwAOQCdxH4Bl4EkK8xykibkgpX4C7pGjCfhVC3IdYJCCl/ACuAI21WrBe67hyGWazkCOBTyHEtQIuwcHNtxFZgb0ejMea1O3CaPQjWeBNZSKCmn0j7eEQBgMNq2+/b6vMUQIuUDe80yl0OhqeTKDdtgl4SuAr1u3vIM+DRkPbrgt18w7gqARUU8yzXEKtpvHFAqpVa1i6wH4P+bwm7XaQy6UK2EvYbqFY1CT1XyjYBC4l2Jt4OkEmWMTDAbLZ1Caq1TXH6Puw2WhSqQSOYx+jQq2L9PsUVOP1IoWyxiqvVtBsavd8DpVKFGqsckzk/48pJvKn53wGTMCDb5/+8g4AAAAASUVORK5CYII=);
   position: absolute!important;
   right: 59.219px!important;
   top: 5px!important;
   padding: 0 4px 8px 8px!important;
-}.rejectionbutton:hover {
+  margin: 0px!important;
+}
+.panicbuttonarrows {
+  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACzElEQVQ4T3WTTWgTURDH39vsV3abD0mjLhF6CoRF/CiCWKQJIhQVbS82t0phEw8K4qGee/VSSlFq2oUeCiJexFJrUUFWqr0oFTQohoKKYqCBZLtJX5Lu2ycTmiC2Xdg9vDfzm//8ZxajfR7TNHsYY6twjTE+YxjGj71C8V6H4+PjXCwW+ylJUsx1XUQp/R0KhXqGh4fp//G7AFNTU5Lf738vCMJRURRb8c1mE21vb+d5nj81Ojpa/xeyCzAzM7Moy/Iln8+HVFVFgiCgzc1NAADouWEYF/cFmKY5KQjCLZ7nUSgUQoFA4ANYUC6Xe7e2ttpK7mcymZttSEeBaZrXOY57IMsyJKJgMFjEGB+DQMbYJ8dxDoESQgjyPO92JpOZbBkMH9M0LyOEFhRFaSc3XdfVC4WCBPe6rgPko+M4QqVSQfV6HSDpbDb7GM/NzR12XbegKIoajUaxKIquIAh9+Xxewxg/3ZE6lEgkip7nvXUcx2fbNiOEEIxxvKVgfn6+NxKJvFZVNcgYu5HP59+JorgGU+A4DjUaDTCxV9f1PsbYvVKpVKOUDqXT6VcdDyzLijcajRPr6+uWz+f7pqpqCOAA8DwPIDYhJBGPx89DOwMDA587HrQdzeVyCsdxvxRFOQBjjEQisIVoY2OjBSGEVMrl8pGxsbHarilMTEz4u7q6VmVZPg5JsVgM8Tx/x/M87Lru3WKx2IJVq1WofDqbzYIHrNPC7OzsI0EQ0jDG7u5uSF5MJpNXoJJlWc8opRdACax2vV5fMAxjsNUC7L2maQ9FUUxLkoQ0TYNKb5LJZAoq7OwBZ1mW5XneWdu2EbzNZvNJOBy+iqenpw/KsvwCpEejUaj8nTF2MpVK2f8A8MrKSphSukYp7SmVSqhWq30hhJxrtbC0tCRRSnOBQGCQ4zi9v7//z15/6fLysiaK4tdqtfqyUqlcGxkZqf0FJW5N6bFeI8UAAAAASUVORK5CYII=);
+  margin: 0px!important;
+}
+.sideswitch {
+  left: 16px!important;
+}
+.pointRight {
+  transform: rotate(90deg)!important;
+}
+.pointLeft {
+  transform: rotate(-90deg)!important;
+}
+.rejectionbutton:hover {
   background: #2ecc71!important;  
 }
 .pbIcon {
+  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAADkUlEQVR4Xu1bO44UQQx9DjgBRAsJIQGwCUh8BATAEZiQI5AQIBKIEAEJN2BD9ghAAIhlJUj4BIQksBGcAGmM3Kqa7Zntnm5Xl90l9XQ2mvrYr1yvbJeLYPwx8x0AZwCcBnAXAAOglmnjfzsAfgL4QUS7liK2CTJoTmZ+AuAagCuDBjrsvAfgPRE9zDTeYphsADDzBQD3AciKr1vlVB3imGIRz4joc+pA9X6DAQiKPwdwKYdAijH2AdwbCkQSAMxMRMTM/ArALYXQFk1fE9HtKJN2glQAzgP4YmTqWh3i1tgmoq/azmoAmPktgOvaiZzavyOiG5q5VAAwsyB8ds0xppnboq1Yw3ciEgvt9XUCIHsLwPFg8lspygth9JJmpZGQTEI/6XMAYBvAX+GqdWN0CsbMJ8KAxxKEqbo4AxDF/Adgi4j+DAXgF4CTqcqPCIBM/ZuITiUDkGvPj2QBoncnJ7RugcD24s52bpMu6xgRgAiCuNGNp8MR5QLpnQuk16Vb7/+1ICQS4Dp5hBS/rZJi4+oaTK4mQi8ZmixA3NubOUy/vhwFWIDwwRtxm5fkqv8Igc2n3nataFgAAFHai/UAaskCmPmjVVRXEAD7RHQ5orEAwHL1U3wBCw6oGezCCuoAvAzJDIVh929akAWI0LtENKsWJqpgjHgRp0ATKVcAhBzeg9zMX9gpsMT3AJ5KjjEC8CFjArNxXxS2BUTGPSK6GgFICTv7E0BCRGi9JSMxS2JPsrhCgKZfgRYg+s4EgEcAHptqX6gFiN4CwItwY2OKQaEWsFPltk01D4MXCgAEgLnl8bdwOZV5QaeF4Y0FOCFdnCe4sMwNAE4kqIkIvRalksl1sp5E6CqT62SFAuByDBa6BfyOwUIBqDjAxRUuFIDKFXYJhgoFoAqGXMLhQgGYuSVESgRAAjS3lJgKgPmckVZToQlsl1JiUthomhRVAWDvnUoK4DApGjLD5nmBvjkBD+csyuJ2MaKxTYe2jRcjUupqcjHqoJB2iqNXY2EbTPdyNABgZgV9939cSkMeaL8eDyBMt0DCEv0SLKBJhk2RVBt95iyT0zhBBlYo/k3/Mrk6ILkKJUcEIL1QsrYSg0tlRwRgWKlsOBUGF0uPBEC2YunB5fLOAOQtl7fiBK3v2rN9555fHUddCD3pJzM1Ypzuo6lAjNN+NrfCCxJATevhZBMhTfbpbAsY03s8vSamKPr5/H/QUiENVqRpfQAAAABJRU5ErkJggg==);
   margin: 0px!important;
   background: transparent!important;
+}
+.uphint {
+  left: 215px!important;
 }
 .panicbuttonarrows {
   position: absolute!important;
   top: 5px!important;
-  left: 215px!important;
 }
 .relapsedbutton:hover {
   background: #9b59b6!important;
@@ -156,4 +184,37 @@ input#religiousEnabledCheckbox:before {
   position: relative!important;
   display: table-cell!important;
   vertical-align: middle!important;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3)!important;
+}
+.hastooltip span {
+  visibility: hidden;
+  position: absolute;
+  top: -25px;
+  left: 0;
+  right: 0;
+  width: fit-content;
+  background-color: #999;
+  color: #fff;
+  text-align: center;
+  padding: 3px;
+  border-radius: 6px;
+  z-index: inherit;
+  opacity: 0;
+  transition-property: opacity;
+  transition-delay: 0.8s;
+  transition-duration: .6s;
+}
+.hastooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+span.tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 25;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #999 transparent transparent transparent;
 }

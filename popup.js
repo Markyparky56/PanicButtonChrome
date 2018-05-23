@@ -57,7 +57,6 @@ panicbutton.itemCacheSync = function(changed, areaName)
   {
   case "sync":
   {
-    console.log(changed);
     for(var item in changed)
     {
       panicbutton.itemCache[item] = changed[item].newValue;

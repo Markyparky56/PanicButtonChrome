@@ -1,11 +1,12 @@
 body,html
 {
     text-align:center;height:100%;-webkit-user-select:none;
+    user-select: none;
     width: 225px;
 }
 .pbutton
 {
-    padding:10px;color:#fff;border:0
+    padding:10px;color:#fff;border:0;width:225px;
 }
 #emergency
 {
@@ -41,6 +42,7 @@ body,html
 
 #religiousEnabledCheckbox {
   -webkit-appearance: checkbox!important;
+  appearance: checkbox!important;
   height: initial!important;
   width: initial!important;
   margin: 5px 3px 3px 4px!important;

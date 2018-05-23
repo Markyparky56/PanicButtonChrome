@@ -1,10 +1,7 @@
-/*
-  This file is just used for prototyping changes to the popup box, it is minified
-  into a single line before being used. Changes made here won't affect the version
-  in the extension proper.
-*/
 body {
+  top: -25px;
   margin: 0;
+  overflow: auto;
 }
 .pbpb {
   z-index: 99999!important;
@@ -189,36 +186,30 @@ input#religiousEnabledCheckbox:before {
   display: table-cell!important;
   vertical-align: middle!important;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3)!important;
+  user-select: none;
 }
-.hastooltip span {
+.sideswitch {
+  position: relative;
+  display: inline-block;  
+}
+.tooltiptext {
+  top: 2.5px;  
+  left: 38px;
   visibility: hidden;
   position: absolute;
-  top: -25px;
-  left: 0;
-  right: 0;
   width: fit-content;
-  background-color: #999;
+  background-color: #888;
   color: #fff;
   text-align: center;
   padding: 3px;
   border-radius: 6px;
-  z-index: inherit;
+  z-index: 9999999;
   opacity: 0;
+}
+.sideswitch:hover + .tooltiptext {
+  visibility: visible;
   transition-property: opacity;
   transition-delay: 0.8s;
   transition-duration: .6s;
-}
-.hastooltip:hover .tooltiptext {
-  visibility: visible;
   opacity: 1;
-}
-span.tooltiptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 25;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #999 transparent transparent transparent;
 }

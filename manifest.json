@@ -25,7 +25,6 @@
 
     "permissions":[
         "webRequest", "webRequestBlocking",
-        "activeTab",
         "storage",
         "*://*.reddit.com/r/*",
         "*://*/*"        

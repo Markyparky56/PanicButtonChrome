@@ -20,7 +20,6 @@ panicbutton.itemCacheSync = function(changed, areaName)
     {
       panicbutton.itemCache[item] = changed[item].newValue;
     }
-    console.log("Settings updated", panicbutton.itemCache);
   }
   default:
   break;
@@ -42,15 +41,12 @@ panicbutton.nsfwguardListener = function(details)
       let xhr = new XMLHttpRequest();
       xhr.open('GET', panicbutton.jsonUrl, false); // sync request
       xhr.send(); 
-      console.log(xhr);
       let json = JSON.parse(xhr.responseText); 
       
-      console.log("Fetch", panicbutton.jsonUrl);
       if(typeof json.data != "undefined")
       {
         if(json.data.over18)
         {
-          console.warn("redirecting because over18 is true", panicbutton.itemCache);
           return {
             redirectUrl: panicbutton.itemCache.safehavenUrl
           };
@@ -60,7 +56,6 @@ panicbutton.nsfwguardListener = function(details)
       {
         if(json[0].data.children[0].data.over_18)
         {
-          console.warn("redirecting because over_18 is true", panicbutton.itemCache);                
           return {
             redirectUrl: panicbutton.itemCache.safehavenUrl
           };
@@ -70,7 +65,6 @@ panicbutton.nsfwguardListener = function(details)
     break;
     case "redirect":
     {
-      console.warn("redirecting because of over18 check page")
       return {
         redirectUrl: panicbutton.itemCache.safehavenUrl
       };
@@ -131,5 +125,3 @@ chrome.webRequest.onBeforeRequest.addListener(
   {urls: ["*://*.reddit.com/*"], types: ["main_frame", "sub_frame"]},
   ["blocking"]
 );
-
-console.log("Hey there!");

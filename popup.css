@@ -1,6 +1,6 @@
 body,html
 {
-    text-align:center;height:100%;-webkit-user-select:none;
+    text-align:center;margin:0;-webkit-user-select:none;
     user-select: none;
     width: 225px;
 }

@@ -62,24 +62,19 @@ panicbutton.SetReligiousSetting = function(valueToSet)
 
 panicbutton.GetNewUrlAndUpdateTab = function(category)
 {
-  chrome.storage.sync.get({
-    religiousEnabled: false
-  }, (items) => {    
-    let religiousEnabled = items.religiousEnabled;
-    let params = {
-      cat:        category,
-      religious:  religiousEnabled,
-      platform:   "extension"
-    };
-    let esc = encodeURIComponent;
-    let query = Object.keys(params)
-                      .map(k => esc(k) + '=' + esc(params[k]))
-                      .join('&');
-    fetch("https://emergency.nofap.com/director.php?" + query, {method: 'GET'})
-    .then((response) => { return response.text(); })
-    .then((newUrl) => { window.parent.location.replace(newUrl); })
-    .catch((err)=>{console.error("NoFap Panic Button PopupBox Error:", err);});
-  });  
+  let params = {
+    cat:        category,
+    religious:  panicbutton.itemCache.religiousEnabled,
+    platform:   "extension"
+  };
+  let esc = encodeURIComponent;
+  let query = Object.keys(params)
+                    .map(k => esc(k) + '=' + esc(params[k]))
+                    .join('&');
+  fetch("https://emergency.nofap.com/director.php?" + query, {method: 'GET'})
+  .then((response) => { return response.text(); })
+  .then((newUrl) => { window.parent.location.replace(newUrl); })
+  .catch((err)=>{console.error("NoFap Panic Button PopupBox Error:", err);});
 }
 
 document.getElementById("religiousSetting").addEventListener("click", (e) => {

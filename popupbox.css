@@ -77,6 +77,7 @@ input#religiousEnabledCheckbox:before {
     box-sizing: content-box;
 }
 .panicbuttonpopupboxtop {
+  user-select: none;
   color: #000!important;
   font: 400 13.33px Arial!important;
   width: 100%!important;

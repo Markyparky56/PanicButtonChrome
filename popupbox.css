@@ -57,9 +57,11 @@ input#religiousEnabledCheckbox:before {
 }
 .panicbuttonpopupbox {
   top: calc(100% - 29px)!important;
+  -moz-user-select: none;
   user-select: none!important;
   border-top-left-radius: 10%!important;
   border-top-right-radius: 10%!important;
+  border-color: rgb(238, 238, 238);
   background: #c8c8c8!important;
 }
 .panicbuttonpopupbox:hover {
@@ -77,6 +79,7 @@ input#religiousEnabledCheckbox:before {
     box-sizing: content-box;
 }
 .panicbuttonpopupboxtop {
+  -moz-user-select: none;
   user-select: none;
   color: #000!important;
   font: 400 13.33px Arial!important;
@@ -187,6 +190,7 @@ input#religiousEnabledCheckbox:before {
   display: table-cell!important;
   vertical-align: middle!important;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3)!important;
+  -moz-user-select: none;
   user-select: none;
 }
 .sideswitch {

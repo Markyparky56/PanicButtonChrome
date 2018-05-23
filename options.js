@@ -74,14 +74,6 @@ function restore_options()
     });
 }
 
-// let panicbutton = {};
-// panicbutton.popupSide = "left";
-
-// panicbutton.popupSideChange = function()
-// {
-//   panicbutton.popupSide = ;
-// }
-
 document.getElementById("popupSideLeft").addEventListener("change", ()=>{panicbutton.popupSideChange();});
 document.getElementById("popupSideRight").addEventListener("change", ()=>{panicbutton.popupSideChange();});
 document.addEventListener("DOMContentLoaded", restore_options);

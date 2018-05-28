@@ -1,8 +1,3 @@
-body {
-  top: -25px;
-  margin: 0;
-  overflow: auto;
-}
 .pbpb {
   z-index: 99999!important;
 }
@@ -70,13 +65,13 @@ input#religiousEnabledCheckbox:before {
 }
 .panicbuttonpopupbox,
 .panicbuttonpopupbox:hover {
-    width: 250px!important;
-    position: fixed!important;
-    transition: top 0.5s ease-in-out!important;
-    border-style: outset!important;
-    border-width: 3px 3px 0px 3px;
-    padding: 0!important;
-    box-sizing: content-box;
+  width: 250px!important;
+  position: fixed!important;
+  transition: top 0.5s ease-in-out!important;
+  border-style: outset!important;
+  border-width: 3px 3px 0px 3px;
+  padding: 0!important;
+  box-sizing: content-box;
 }
 .panicbuttonpopupboxtop {
   -moz-user-select: none;

@@ -13,27 +13,13 @@ panicbutton.popupboxInit = function()
 {
   // Don't run in iframes
   if(window.top === window.self)
-  {
-    // Try and fit ourselves in a footer, if one doesn't exists create our own
-    // Also ensure the footer is a footer at the bottom of the HTML block, since 
-    // some sites use them inside the document
-    let footer = document.querySelector('footer');
-    if(footer === null || footer.parentNode.tagName !== "HTML")
-    {
-        footer = document.createElement('footer');
-        footer.setAttribute("id", "popuppanicbuttonfooter");
-        // Insert at very end of page, this avoids being overridden by any styles which may be added later, like stylish
-        document.documentElement.appendChild(footer);
-    }
-
-    //footer.insertAdjacentHTML('beforeend', panicbutton.GetPopupPanicButtonString());
-    
-    // Create a link element to our popupbox stylesheet
+  {    
+    // Create a link element to our popupbox stylesheet and add it to the body
     let popupboxStyle = document.createElement("link");
     popupboxStyle.rel = "stylesheet";
     popupboxStyle.type = "text/css";
     popupboxStyle.href = chrome.runtime.getURL("popupbox.css");
-    footer.appendChild(popupboxStyle);
+    document.body.appendChild(popupboxStyle);
 
     // Create the iframe element our popup box will reside within
     panicbutton.popupboxFrame = document.createElement("iframe");
@@ -41,8 +27,9 @@ panicbutton.popupboxInit = function()
     panicbutton.popupboxFrame.classList.add("pboverride", "pbpb", "panicbuttonpopupbox");
     panicbutton.popupboxFrame.scrolling="no";
     panicbutton.popupboxFrame.id = "pbFrame";
-    panicbutton.popupboxFrame.height = "276px"
-    footer.appendChild(panicbutton.popupboxFrame);
+    panicbutton.popupboxFrame.height = "276px";
+    panicbutton.popupboxFrame.width = "250px";
+    document.body.appendChild(panicbutton.popupboxFrame);
 
     panicbutton.popupboxFrame.classList.add(((panicbutton.panicbuttonSideLeft == true) ? 'pbpbLeft' : 'pbpbRight'));
 

@@ -33,7 +33,8 @@ panicbutton.nsfwguardListener = function(details)
   if(panicbutton.itemCache.nsfwguardEnabled)
   {
     // Check the requested url's about.json to determine if it is NSFW
-    switch(panicbutton.processUrl(details.url))
+    let todo = panicbutton.processUrl(details.url);
+    switch(todo)
     {
     case "checkjson":
     {
@@ -89,18 +90,23 @@ panicbutton.processUrl = function(url)
   let regexResult = regex.exec(panicbutton.url);
   if(regexResult != null)
   {
+    panicbutton.url = regexResult[0];
     // Check if we need to add a '/' to the end of the url
     if(panicbutton.url.slice(-1) != "/")
     {
       panicbutton.url += "/";
     }
-    // a bunch of meta subreddits don't have an about.json so we need to exclude it
-    if(panicbutton.url == "https://www.reddit.com/r/all/"
-    || panicbutton.url == "https://www.reddit.com/r/random/"
-    || panicbutton.url == "https://www.reddit.com/r/popular/"
-    || panicbutton.url == "https://www.reddit.com/r/mod")
+    // a bunch of meta subreddits don't have an about.json so we need to exclude them
+    if(~panicbutton.url.indexOf("/r/all/")
+    || ~panicbutton.url.indexOf("/r/random/")
+    || ~panicbutton.url.indexOf("/r/popular/")
+    || ~panicbutton.url.indexOf("/r/mod"))
     {
       return "ignore";
+    }
+    else if(~panicbutton.url.indexOf("/r/randnsfw")) // Catch randnsfw and redirect straight away
+    {
+      return "redirect";
     }
 
     // Append the about.json we want to check

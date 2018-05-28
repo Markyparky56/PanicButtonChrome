@@ -19,11 +19,11 @@ span#emText {
     color: #fff!important;
 }
 #religiousEnabledCheckbox {
-    -webkit-appearance: checkbox!important;
-    appearance: checkbox!important;
-    height: initial!important;
-    width: initial!important;
-    margin: 5px 3px 3px 4px!important;
+  -webkit-appearance: checkbox!important;
+  appearance: checkbox!important;
+  height: initial!important;
+  width: initial!important;
+  margin: 5px 3px 3px 4px!important;
 }
 input#religiousEnabledCheckbox:focus {
   box-shadow: initial!important;
@@ -32,16 +32,16 @@ input#religiousEnabledCheckbox:before {
   content: none!important;
 }
 .religiousSetting {
-    position: absolute!important;
-    top: 11%!important;
-    left: 2%!important;
-    background: #73716e!important;
-    border-radius: 3px!important;
-    display: flex!important;
-    align-items: center!important;
-    justify-content: center!important;
-    padding-right: 4px!important;
-    width: 78.484px!important;
+  position: absolute!important;
+  top: 11%!important;
+  left: 2%!important;
+  background: #73716e!important;
+  border-radius: 3px!important;
+  display: flex!important;
+  align-items: center!important;
+  justify-content: center!important;
+  padding-right: 4px!important;
+  width: 78.484px!important;
 }
 .religiousSetting:hover {
   background: #8B8986!important;

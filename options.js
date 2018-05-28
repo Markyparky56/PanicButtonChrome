@@ -74,8 +74,6 @@ function restore_options()
     });
 }
 
-document.getElementById("popupSideLeft").addEventListener("change", ()=>{panicbutton.popupSideChange();});
-document.getElementById("popupSideRight").addEventListener("change", ()=>{panicbutton.popupSideChange();});
 document.addEventListener("DOMContentLoaded", restore_options);
 document.getElementById("save").addEventListener("click", save_options);
 document.addEventListener("DOMContentLoaded", function(event) {

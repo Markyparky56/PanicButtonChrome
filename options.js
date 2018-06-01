@@ -3,7 +3,8 @@ function save_options()
 {
     let religious = document.getElementById("religious").checked;
     let nsfwguard = document.getElementById("nsfwguard").checked;
-    let safehaven = document.getElementById("nsfwguard-safehaven").value;
+    let nsfwguard_redirectOnNSFWComments = document.getElementById("nsfwguard_comments").checked;
+    let safehaven = document.getElementById("nsfwguard_safehaven").value;
     let popup = document.getElementById("popup").checked;
     let popupSide = document.querySelector("input[name='popupSide']:checked").value;
 
@@ -24,6 +25,7 @@ function save_options()
     chrome.storage.sync.set({
         religiousEnabled: religious,
         nsfwguardEnabled: nsfwguard,
+        nsfwguard_redirectOnNSFWComments: nsfwguard_redirectOnNSFWComments,
         safehavenUrl: safehaven,
         popupEnabled: popup,
         popupBlacklist: popupBlacklist,
@@ -46,6 +48,7 @@ function restore_options()
     chrome.storage.sync.get({
         religiousEnabled: false,
         nsfwguardEnabled: true,
+        nsfwguard_redirectOnNSFWComments: true,
         safehavenUrl: "https://www.reddit.com/r/nofap/",
         popupEnabled: true,
         popupBlacklist: ["www.example.com"],
@@ -53,7 +56,8 @@ function restore_options()
     }, function(items) {
         document.getElementById("religious").checked = items.religiousEnabled;
         document.getElementById("nsfwguard").checked = items.nsfwguardEnabled;
-        document.getElementById("nsfwguard-safehaven").value = items.safehavenUrl;
+        document.getElementById("nsfwguard_comments").checked = items.nsfwguard_redirectOnNSFWComments;        
+        document.getElementById("nsfwguard_safehaven").value = items.safehavenUrl;
         document.getElementById("popup").checked = items.popupEnabled;
         if(items.popupSide == "left")
         {
@@ -77,10 +81,33 @@ function restore_options()
 document.addEventListener("DOMContentLoaded", restore_options);
 document.getElementById("save").addEventListener("click", save_options);
 document.addEventListener("DOMContentLoaded", function(event) {
-    let selector = document.querySelector("input[name=nsfwguard]");
-    let safehavenInput = document.querySelector("input[name=nsfwguard-safehaven]");
-    selector.addEventListener("change", function(event) {
-        if(selector.checked) { safehavenInput.disabled=false; }
-        else { safehavenInput.disabled=true; }
+    let nsfwGuardCheckbox = document.querySelector("input[name=nsfwguard]");
+    let safehavenInput = document.querySelector("input[name=nsfwguard_safehaven]");
+    let nsfwguardComments = document.querySelector("input[name=nsfwguard_comments]");
+    nsfwGuardCheckbox.addEventListener("change", function(event) {
+        if(nsfwGuardCheckbox.checked) 
+        { 
+          safehavenInput.disabled=false; 
+          nsfwguardComments.disabled=false;          
+        }
+        else 
+        { 
+          safehavenInput.disabled=true; 
+          nsfwguardComments.disabled=true;
+        }
     });
+    let popupCheckbox = document.querySelector("input[name=popup]");
+    let popupRadio = document.querySelectorAll("input[name=popupSide]");
+    popupCheckbox.addEventListener("change", function(event) {
+      if(popupCheckbox.checked)
+      {
+        popupRadio[0].disabled=false;
+        popupRadio[1].disabled=false;
+      }
+      else
+      {
+        popupRadio[0].disabled=true;
+        popupRadio[1].disabled=true;        
+      }
+    })
 });

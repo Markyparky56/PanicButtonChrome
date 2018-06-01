@@ -3,22 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>NoFap Panic Button Options</title>
+    <style>
+      body {
+        overflow-y: hidden;
+      }
+    </style>
 </head>
 
 <body>
     <i>Remember to hit save at the bottom if you make any changes!</i>
     <h3 id="NSFWGuardH3"><u>NSFWGuard</u></h3>
     <input type="checkbox" name="nsfwguard" id="nsfwguard" checked> Enable NSFWGuard </br>
-    Redirect To: <input type="text" name="nsfwguard-safehaven" id="nsfwguard-safehaven" value="https://www.reddit.com/r/nofap/" style="width:225px">
+    <input type="checkbox" name="nsfwguard_comments" id="nsfwguard_comments" checked> Enable NSFWGuard to check for nsfw comment pages on sfw subreddits </br>
+    Redirect To: <input type="text" name="nsfwguard_safehaven" id="nsfwguard_safehaven" value="https://www.reddit.com/r/nofap/" style="width:225px">
     </br>
     <div id="nsfwguard-desc">
-    Enabling NSFWGuard will allow the extension to detect whether a subreddit is
-    flagged as NSFW (for over 18s only) and will redirect you to a page of your
-    choice if it is.
+    Enabling NSFWGuard will allow the extension to detect whether a subreddit (or comments page) is
+    flagged as NSFW and will redirect you to a page of your choice if it is.
     </div>
     <hr>
     <h3 id="PopupPanicButtonH3"><u>Popup Panic Button</u></h3>
-    <input type="checkbox" id="popup"> Enable Popup Panic Button<br>
+    <input type="checkbox" id="popup" name="popup"> Enable Popup Panic Button<br>
 
     Popup Side:
     <input id="popupSideLeft" type="radio" name="popupSide" value="left" checked> Left 
@@ -40,6 +45,7 @@
     <li>http://www.example.com/specific/page</li>
     <li>*.example.com</li>
     <b><u>Popup Panic Button Site Blacklist</u></b>
+    <br>
     <textarea id="popupBlacklist" cols="60" rows="3" wrap="hard" style="resize:none;margin-top:5px;"></textarea>
     <hr>
     <input type="checkbox" id="religious"> Enable Religous Content<br></br>

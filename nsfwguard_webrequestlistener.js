@@ -105,7 +105,6 @@ panicbutton.processUrl = function(url)
       return "redirect";
     }
 
-    // 
     return "checkdb";
   }
   else // Check for an over18 page

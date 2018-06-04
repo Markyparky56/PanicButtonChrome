@@ -8,6 +8,14 @@ function save_options()
     let popup = document.getElementById("popup").checked;
     let popupSide = document.querySelector("input[name='popupSide']:checked").value;
 
+    // Check the safehaven url to ensure it is contains the http scheme, otherwise redirects will not work
+    let regex = /^https?:\/\//;
+    let regexResult = regex.exec(safehaven);
+    if(regexResult == null)
+    {
+      safehaven = "http://" + safehaven; // http is often promoted to https, but https won't work if the site doesn't support it
+    }
+
     // Get the popup blacklist in text form
     let popupBlacklist = document.getElementById("popupBlacklist").value;
     // Split into a list on semi-colons

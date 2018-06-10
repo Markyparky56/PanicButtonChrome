@@ -67,9 +67,10 @@ chrome.storage.sync.get({
     {
       let address = items.popupBlacklist[addr];
       // Replace wildcards with letter catchalls
-      let regAddr = address.replace(/\*/g, "[-a-zA-Z0-9@:%_\+.~#?&=]{0,256}");
+      let regAddr = address.replace(/\*/g, "[-a-zA-Z0-9@:%_\+.~#?&=\/\\\\]+");
       let regex = RegExp(regAddr);
-      if(regex.exec(window.location.href))
+      let result = regex.exec(window.location.href);
+      if(result != null)
       {
         // Address is on blacklist, end search, don't add to page
         return;

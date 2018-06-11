@@ -7,6 +7,19 @@
       body {
         width: 500px;
       }
+      body:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: url("images/NoFapRocket.svg");
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        opacity: 0.15;
+        z-index: -1;
+      }
     </style>
 </head>
 
@@ -40,10 +53,12 @@
     match that address.
     <br>
     Valid ways to blacklist sites and specific pages include:<br>
-    <li>www.example.com</li>
-    <li>example.com</li>
-    <li>http://www.example.com/specific/page</li>
-    <li>*.example.com</li>
+    <ul>
+      <li>www.example.com</li>
+      <li>example.com</li>
+      <li>http://www.example.com/specific/page</li>
+      <li>*.example.com</li>
+    </ul> 
     <b><u>Popup Panic Button Site Blacklist</u></b>
     <br>
     <textarea id="popupBlacklist" cols="60" rows="3" wrap="hard" style="resize:none;margin-top:5px;"></textarea>

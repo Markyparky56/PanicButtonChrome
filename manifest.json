@@ -3,7 +3,7 @@
 
     "name":                 "NoFap Panic Button",
     "description":          "This extension provides an in browser version of the NoFap Emergency Relapse Prevention Tool.",
-    "version":              "1.3.2",
+    "version":              "1.3.3",
     "incognito":            "spanning",
 
     "icons":{
@@ -27,12 +27,16 @@
     "permissions":[
         "webRequest", "webRequestBlocking",
         "storage",
+        "notifications",
         "*://*.reddit.com/r/*",
         "*://*/*"        
     ],
 
     "background": {
-      "scripts": ["nsfwguard_webrequestlistener.js", "subredditDBLoad.js"]
+      "scripts": [
+        "nsfwguard_webrequestlistener.js", 
+        "subredditDBLoad.js",
+        "privacyUpdate.js"]
     },
 
     "web_accessible_resources": [

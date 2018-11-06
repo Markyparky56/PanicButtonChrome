@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <title>NoFap Panic Privacy Policy</title>
+      <style>
+        .wrapper {
+          display: flex;
+          flex-flow: row wrap;
+          text-align: center;
+          justify-content: center;
+          font-weight: 400;
+          font-size: 11pt;
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+        .content {
+          text-align: left; 
+          width: 700px;
+          font: inherit;
+          font-size: 100%;
+        }
+        .section {
+          margin-top:2px;
+          padding: 8px;
+          background: rgba(90, 90, 90, 0.15);
+          border-radius: 15px;
+        }
+        .section, p {
+          margin-top:2px;
+        }
+
+        body:after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-image: url("images/NoFapRocket.svg");
+          background-repeat: no-repeat;
+          background-position: center center;
+          width: 100%;
+          height: 100%;
+          opacity: 0.15;
+          z-index: -1;
+        }
+      </style>
+  </head>
+<body>
+  <div class="wrapper">
+    <div class="content">
+      <div class="section">
+        <h1 class="title">NoFap Panic Button – Privacy Policy</h1>
+        <i>Last Updated: 2018/11/06</i>
+        <p>
+          <strong>– What Information Do We Collect, Why, and How Is It Stored?</strong>
+          <br>
+          The NoFap Panic Button does not collect and store any of your personal data.
+          <br><br>
+          Elements of the NoFap Panic Button (which may be disabled) require access to your browsing data so that they may parse the web pages you are visiting, this processing is required for those elements of the extension to function. This data is not transmitted externally.
+          <br><br>
+          Of note: the NoFap Panic Button feature NSFWGuard maintains a local database of nsfw subreddits. If NSFWGuard encounters a subreddit during browsing which is not contained in this database it will add it to the database. This database is entirely local to your computer and is not communicated to NoFap LLC or any third-parties.
+          <br><br>
+          The NoFap Panic Button provides an options menu which allows the user to configure which additional features of the extension they want. These options are stored via Google Chrome’s storage sync API, which will synchronise options across devices. We only store configuration options via the sync API, including which features are enabled, NSFWGuard’s redirect link, the side the Popup Panic Button appears on and the Popup Panic Button’s site Blacklist.
+        </p>
+        <p><strong>– Do We Use Any Cookies?</strong><br>
+        No, the NoFap Panic Button Extension does not set or read any cookies during your browsing experience.</p>
+        <p><strong>– Information Sharing</strong><br>
+        NoFap LLC values your privacy, as such we do not transmit any data regarding your use of the extension or your browsing habits.</p>
+        <p><strong>– Dispute Resolution</strong><br>
+        If you have a complaint about the NoFap Panic Button extension you should contact NoFap LLC at contact@NoFap.com. Our mailing address is PO Box 81015, Pittsburgh PA 15217.</p>
+        <p><strong>– Changes To This Policy</strong><br>
+        We may update this Privacy Policy to reflect changes in how we handle any data used by the extension, in light of changes to the functionality of the extension. If we make any changes you will be notified of those changes through the extension and offered the opportunity to disable any features which might be related to those changes or to uninstall the extension.</p>
+      </div>
+      <div class="section">
+        <p><strong>– Quick Disable</strong><br>
+          We understand if you wish to disable some features of the Panic Button, please uncheck any features below which you do not wish to use and click save to confirm.
+          <br>
+          You can access the <a href="/options.html">Options Page</a> to re-enable, disable or access further options at any time.
+        </p>
+        <input type="checkbox" name="nsfwguard" id="nsfwguard" checked> NSFWGuard Enabled
+        <br>
+        <input type="checkbox" name="popup" id="popup" checked> Popup Panic Button Enabled
+        <br>
+        <button id="save">Save</button>
+        <div id="status"></div>
+        <script src="privacypolicy.js"></script>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
